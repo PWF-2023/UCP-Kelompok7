@@ -43,6 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/todo/{todo}/incomplete', [TodoController::class, 'uncomplete'])->name('todo.uncomplete');
     Route::delete('/todo',[TodoController::class, 'destroyCompleted'])->name('todo.deleteallcompleted');
 
+    Route::get('/category', [TodoController::class, 'index'])->name('category.index');
+
     // Route::get('/user', [UserController::class, 'index'])->name('user.index');
     // Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 
