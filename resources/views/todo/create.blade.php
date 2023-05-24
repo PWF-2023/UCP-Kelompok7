@@ -19,6 +19,16 @@
                             <x-text-input id="title" name="title" type="text" class="block w-full mt-1" required autofocus autocomplete="title" />
                             <x-input-error class="mt-2" :messages="$errors->get('title')" />
                         </div>
+                        <!-- Bagian Category -->
+                        <div class="mb-6">
+                            <x-input-label for="category_id" :value="__('Category')" />
+                            <x-select name="category_id" id="category_id" class="block w-full mt-1">
+                                <option value="">-- Pilih --</option>
+                                @foreach($categories as $category)
+                                <option value=" {{$category->id}} ">{{$category->title}}</option>
+                                @endforeach
+                            </x-select>
+                        </div>
                         <div class="flex items-center gap-4">
                             <x-primary-button>{{ __('Save') }}</x-primary-button>
                             <a href="{{ route('todo.index') }}" class="inline-flex items-center px-4 py-2 text-xs
