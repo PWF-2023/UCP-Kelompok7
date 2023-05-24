@@ -26,6 +26,10 @@
                         </x-nav-link>
                     @endcan
 
+                    <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.index')">
+                        {{ __('Category') }}
+                    </x-nav-link>
+
 
                 </div>
             </div>
@@ -100,6 +104,9 @@
                     {{ __('User') }}
                 </x-responsive-nav-link>
             @endcan
+            <x-responsive-nav-link :href="route('category.index')" :active="request()->routeIs('category.index')">
+                {{ __('Category') }}
+            </x-responsive-nav-link>
 
 
 
