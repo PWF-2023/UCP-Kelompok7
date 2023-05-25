@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
 
     // Get all user route and change with prefix user
     Route::middleware('admin')->group(function () {
-        Route::get('/', [UserController::class, 'index'])->name('user.index');
+        Route::get('/user', [UserController::class, 'index'])->name('user.index');
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
         Route::patch('/{user}/makeadmin', [UserController::class, 'makeadmin'])->name('user.makeadmin');
         Route::patch('/{user}/removeadmin', [UserController::class, 'removeadmin'])->name('user.removeadmin');

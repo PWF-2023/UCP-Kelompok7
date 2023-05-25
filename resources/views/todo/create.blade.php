@@ -23,7 +23,7 @@
                         <div class="mb-6">
                             <x-input-label for="category_id" :value="__('Category')" />
                             <x-select name="category_id" id="category_id" class="block w-full mt-1">
-                                <option value="">-- Pilih --</option>
+                                <option value="">{{ __('Empty') }}</option>
                                 @foreach($categories as $category)
                                 <option value=" {{$category->id}} ">{{$category->title}}</option>
                                 @endforeach
